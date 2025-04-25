@@ -1,0 +1,77 @@
+{
+  "title": "Job Application",
+  "layout": {
+    "columns": 4,
+    "margin_x": 50,
+    "margin_y": 50,
+    "row_height": 30,
+    "column_width": 120
+  },
+  "fields": [
+    {% for i in range(50) %}
+    {
+      "type": "text",
+      "text": "Personal Info Field {{ i + 1 }}",
+      "row": {{ i }},
+      "col": 0
+    },
+    {
+      "type": "fillable",
+      "name": "personal_{{ i + 1 }}",
+      "row": {{ i }},
+      "col": 1,
+      "col_span": 3,
+      "value": "{{ 'Value ' ~ i }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %},
+
+    {% for i in range(50, 100) %}
+    {
+      "type": "text",
+      "text": "Employment History {{ i - 49 }}",
+      "row": {{ i }},
+      "col": 0
+    },
+    {
+      "type": "fillable",
+      "name": "employment_{{ i - 49 }}",
+      "row": {{ i }},
+      "col": 1,
+      "col_span": 3,
+      "value": "{{ 'Company ' ~ (i - 49) }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %},
+
+    {% for i in range(100, 150) %}
+    {
+      "type": "text",
+      "text": "Skill #{{ i - 99 }}",
+      "row": {{ i }},
+      "col": 0
+    },
+    {
+      "type": "checkbox",
+      "name": "skill_{{ i - 99 }}",
+      "row": {{ i }},
+      "col": 1
+    }{% if not loop.last %},{% endif %}
+    {% endfor %},
+
+    {% for i in range(150, 200) %}
+    {
+      "type": "text",
+      "text": "Declaration Field {{ i - 149 }}",
+      "row": {{ i }},
+      "col": 0
+    },
+    {
+      "type": "fillable",
+      "name": "decl_{{ i - 149 }}",
+      "row": {{ i }},
+      "col": 1,
+      "col_span": 3,
+      "value": ""
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}

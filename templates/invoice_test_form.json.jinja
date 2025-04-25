@@ -1,0 +1,56 @@
+{
+  "title": "Invoice Form",
+  "fields": [
+    {
+      "type": "text",
+      "text": "Customer Name:",
+      "x": 100,
+      "y": 720,
+      "font_size": 12
+    },
+    {
+      "type": "fillable",
+      "label": "Customer Name",
+      "name": "customer_name",
+      "x": 200,
+      "y": 710,
+      "width": 250,
+      "height": 20,
+      "value": "{{ customer_name }}"
+    },
+    {
+      "type": "text",
+      "text": "Invoice Date:",
+      "x": 100,
+      "y": 690,
+      "font_size": 12
+    },
+    {
+      "type": "fillable",
+      "label": "Invoice Date",
+      "name": "invoice_date",
+      "x": 200,
+      "y": 680,
+      "width": 150,
+      "height": 20,
+      "value": "{{ invoice_date }}"
+    },
+    { "type": "text", "text": "Agree to Terms:", "x": 100, "y": 500 },
+    { "type": "checkbox", "name": "agree", "x": 200, "y": 495, "checked": true },
+
+    {
+      "type": "radio",
+      "label": "Preferred Contact",
+      "name": "contact_method",
+      "options": [
+        { "value": "email", "x": 100, "y": 450, "selected": true },
+        { "value": "phone", "x": 100, "y": 430 }
+      ]
+    },
+
+    {
+      "type": "line",
+      "x1": 100, "y1": 420, "x2": 400, "y2": 420, "width": 1
+    }
+  ]
+}
